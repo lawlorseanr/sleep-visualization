@@ -1,0 +1,44 @@
+{
+  "name": "sleep-visualization",
+  "version": "1.0.0",
+  "description": "Full stack application to visualize sleep data",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/index.js",
+    "build": "npx webpack --watch --config=./webpack.config.js --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lawlorseanr/sleep-visualization.git"
+  },
+  "keywords": [
+    "full",
+    "stack",
+    "react",
+    "node",
+    "express"
+  ],
+  "author": "Sean Lawlor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lawlorseanr/sleep-visualization/issues"
+  },
+  "homepage": "https://github.com/lawlorseanr/sleep-visualization#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "nodemon": "^2.0.13",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node": "^16.10.0",
+    "path": "^0.12.7"
+  }
+}
