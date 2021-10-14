@@ -3,8 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const router = require("./routers");
 
-const HOST = "localhost";
-const PORT = 3000;
+const { host, port } = require("./config/config");
 
 const app = express();
 app.use(cors());
@@ -14,6 +13,6 @@ app.use("/api", router);
 // a simple response to ensure server is alive and responsive
 app.use("/hello", (req, res) => res.status(200).json("Wingardium, leviosa!"));
 
-app.listen(PORT, HOST, () =>
-  console.log(`Server listening on http://${HOST}:${PORT}`)
+app.listen(port, host, () =>
+  console.log(`Server listening on http://${host}:${port}`)
 );

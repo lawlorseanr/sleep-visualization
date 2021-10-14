@@ -1,5 +1,4 @@
 // ["8PM", "9PM", "10PM", "11PM", "12AM", "1AM", "2AM", "3AM", "4AM"]
-// [0, 10, 5, null, null, 30, 45, 30, 20]
 export default (labels, data) => {
   return {
     type: "line",

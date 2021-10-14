@@ -7,6 +7,8 @@
 */
 
 module.exports = {
+  host: "localhost",
+  port: 3000,
   userDataUrl: "https://s3.amazonaws.com/eight-public/challenge",
   userList: [
     { name: "sean", id: "2228b530e055401f81ba37b51ff6f81d" },
