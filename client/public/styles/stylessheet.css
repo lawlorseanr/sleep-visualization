@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  background-color: white;
+}
+
+#root {
+  width: 100%;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  width: 95%;
+}
