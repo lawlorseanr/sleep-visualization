@@ -21,9 +21,23 @@ const App = () => {
   const [userList, setUserList] = useState([]);
   const [userIndex, setUserIndex] = useState(null);
 
-  useEffect(() => {
-    new Chart(document.getElementById("myChart"), config(label, data));
+  useEffect(async () => {
+    const response = await Server.get("/api/users");
+    setUserList(response.data);
   }, []);
+
+  useEffect(async () => {
+    if (userList.length > 0) {
+      const start_index = 0;
+      setUserIndex(start_index);
+      const response = await Server.get(
+        `/api/data/user/${userList[start_index].id}`
+      );
+      userData[start_index] = response.data.intervals;
+      setUserData(userData);
+      // new Chart(document.getElementById("myChart"), config(label, data));
+    }
+  }, [userList]);
 
   return (
     <div id="app">

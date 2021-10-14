@@ -6,20 +6,22 @@ if (USE_MOCK_DATA) {
   MOCK_DATA = require("../data");
 }
 
-module.exports = (req, res) => {
+module.exports = (req, res, next) => {
   const { user_id } = req.params;
-
+  console.log("beginning");
   if (USE_MOCK_DATA) {
-    res.status(200).json(MOCK_DATA[user_id]);
+    res.data = MOCK_DATA[user_id];
+    next();
   } else {
     DataServer.get(`/${user_id}.json`)
       .then((userData) => {
         const { data } = userData;
         data.id = user_id;
-        res.status(200).json(data);
+        res.data = data;
+        next();
       })
       .catch((error) => {
-        res.status(404).send(error);
+        res.status(500).send(error);
       });
   }
 };

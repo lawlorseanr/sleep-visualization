@@ -5,13 +5,23 @@
 */
 
 const router = require("express").Router();
-const userController = require("../controllers/users");
-const dataController = require("../controllers/data");
+
+// users endpoint
+const getUsers = require("../controllers/users");
+
+// data endpoint
+const getData = require("../controllers/data");
+const formatData = require("../controllers/format");
+const sendData = require("../controllers/send");
 
 /*
     /api
 */
-router.get("/users", userController);
-router.get("/data/user/:user_id", dataController);
+router.get("/users", getUsers);
+
+router
+  .get("/data/user/:user_id", getData)
+  .get("/data/user/:user_id", formatData)
+  .get("/data/user/:user_id", sendData);
 
 module.exports = router;
