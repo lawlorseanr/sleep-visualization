@@ -10,14 +10,14 @@ module.exports = (req, res, next) => {
   const { user_id } = req.params;
   console.log("beginning");
   if (USE_MOCK_DATA) {
-    res.data = MOCK_DATA[user_id];
+    res.rawData = MOCK_DATA[user_id];
     next();
   } else {
     DataServer.get(`/${user_id}.json`)
       .then((userData) => {
         const { data } = userData;
         data.id = user_id;
-        res.data = data;
+        res.rawData = data;
         next();
       })
       .catch((error) => {

@@ -15,4 +15,11 @@ module.exports = {
     { name: "xuandan", id: "d6c1355e38194139b8d0c870baf86365" },
     { name: "emily", id: "f9bf229fd19e4c799e8c19a962d73449" },
   ],
+  STAGE_MAP: {
+    out: 3,
+    awake: 2,
+    light: 1,
+    deep: 0,
+  },
+  TRIM_LENGTH: ".000Z".length,
 };
