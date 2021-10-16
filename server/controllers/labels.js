@@ -37,7 +37,11 @@ module.exports = (req, res, next) => {
 
     for (let t = xLabelStart; t <= xLabelStop; t += hr2ms) {
       xTick.value.push(t);
-      xTick.text.push(new Date(t).getHours() + TIMEZONE);
+      let hours = new Date(t).getHours() + TIMEZONE;
+      if (hours >= 24) {
+        hours -= 24;
+      }
+      xTick.text.push(hours);
     }
 
     res.data[i].xaxis = {
@@ -48,6 +52,7 @@ module.exports = (req, res, next) => {
     };
 
     res.data[i].yaxis = {
+      range: [0, 3],
       tickvals: yTick.value,
       ticktext: yTick.text,
       tickmode: "array",
