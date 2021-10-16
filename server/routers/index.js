@@ -12,6 +12,7 @@ const getUsers = require("../controllers/users");
 // data endpoint
 const getData = require("../controllers/data");
 const formatData = require("../controllers/format");
+const labelData = require("../controllers/labels");
 const sendData = require("../controllers/send");
 
 /*
@@ -22,6 +23,7 @@ router.get("/users", getUsers);
 router
   .get("/data/user/:user_id", getData)
   .get("/data/user/:user_id", formatData)
+  .get("/data/user/:user_id", labelData)
   .get("/data/user/:user_id", sendData);
 
 module.exports = router;
