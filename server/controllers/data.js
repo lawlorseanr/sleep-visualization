@@ -8,7 +8,6 @@ if (USE_MOCK_DATA) {
 
 module.exports = (req, res, next) => {
   const { user_id } = req.params;
-  console.log("beginning");
   if (USE_MOCK_DATA) {
     res.rawData = MOCK_DATA[user_id];
     next();

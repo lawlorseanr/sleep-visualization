@@ -26,11 +26,11 @@ export default (labels, data) => {
           },
           ticks: {
             font: {
-              max: 5,
-              min: 0,
-              stepSize: 0.5,
               size: 25,
             },
+            beginAtZero: true,
+            stepSize: 10,
+            max: 100,
           },
         },
       },

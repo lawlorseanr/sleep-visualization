@@ -22,4 +22,5 @@ module.exports = {
     deep: 0,
   },
   TRIM_LENGTH: ".000Z".length,
+  TIMEZONE: 8,
 };
