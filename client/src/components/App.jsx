@@ -23,21 +23,24 @@ const App = () => {
       const response = await Server.get(
         `/api/data/user/${userList[start_index].id}`
       );
+
+      console.log(response.data);
+
       userData[start_index] = response.data;
       setUserIndex(start_index);
       setUserData(userData);
 
       let data = [
         {
-          x: response.data.time,
-          y: response.data.data,
+          x: response.data[start_interval].time,
+          y: response.data[start_interval].data,
           type: "line",
         },
       ];
 
       let layout = {
-        xaxis: response.data.xaxis,
-        xaxis: response.data.yaxis,
+        xaxis: response.data[start_interval].xaxis,
+        yaxis: response.data[start_interval].yaxis,
         width: 1000,
         height: 500,
         margin: {
